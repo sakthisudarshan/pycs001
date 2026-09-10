@@ -1,0 +1,20 @@
+tool: altcover
+language: csharp
+version: "net8.0"
+technique: Path Coverage
+metrics:
+  - Path Coverage %
+  - Path Execution Tracking
+  - Complete Coverage Path Verification
+  - Partial Path Coverage Detection
+  - Nested Condition Path Testing
+  - Loop Path Detection
+  - Unreachable Path Detection
+  - Exception Path Handling
+  - Multi-Function Path Tracking
+  - CI/CD Integration Test
+primary: true
+secondary: csharp-call-paths
+run_command: python quality/altcover/trigger.py
+config: altcover.xml
+output: quality/altcover/report/

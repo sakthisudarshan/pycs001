@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-trigger.py — Native Python trigger runner for SAST (Bandit).
+trigger.py â€” Native Python trigger runner for SAST (Bandit).
 """
 import subprocess
 import sys

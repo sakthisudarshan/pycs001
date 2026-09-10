@@ -1,4 +1,4 @@
-// RoslynSample.cs — General Roslyn rule violations fixture
+// RoslynSample.cs â€” General Roslyn rule violations fixture
 using System;
 using System.IO;
 

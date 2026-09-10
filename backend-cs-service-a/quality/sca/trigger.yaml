@@ -1,0 +1,21 @@
+tool: dotnet-nuget-audit
+language: csharp
+version: "net8.0"
+technique: Dependency Risk (SCA)
+metrics:
+  - Vulnerability Dependency Detection (Known CVE Count)
+  - Transitive Dependency Analysis
+  - License Compliance Testing
+  - Supply Chain Security Analysis
+  - Dependency Health Monitoring
+  - Risk Prioritization
+  - Continuous Dependency Monitoring
+  - Outdated Dependency Detection
+primary: true
+secondary: cve-bin-tool
+run_command: python quality/sca/trigger.py
+known_vulnerable_packages:
+  - name: Newtonsoft.Json
+    version: "12.0.1"
+    cve: CVE-2024-21907
+output: quality/sca/report/

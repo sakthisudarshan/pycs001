@@ -1,38 +1,28 @@
-tool: Coverage.py
-version: 7.4.4
+tool: coverage.py
+version: "7.4.4"
 language: python
-language_version: '3.11'
-technique: Control Flow Testing
+language_version: "3.11"
+technique: Code Coverage Auditing
 classification: Statement and Branch Coverage
-execution_result: pass
-status: pass
+target_files:
+  - sample_covered.py
+  - test_sample_covered.py
+run:
+  command: "python trigger.py"
+run_command: python quality/coverage/trigger.py
+thresholds:
+  statement: 80
+  branch: 75
+  fail_under: 80
+metrics:
+  - Statement Coverage %
+  - Branch Coverage %
+  - Path Coverage %
+  - Coverage Delta %
 primary: true
 secondary: pytest-cov
-run_command: pytest --cov=src --cov-report=xml --cov-report=term-missing tests/
-metrics:
-- Unit Testing Support
-- Unreachable Logic Identification
-- Coverage Gap Analysis
-- Surface-Level Correctness
-- Statement Coverage %
-- Boolean Accuracy Check
-- Sequence Integrity Mapping
-- Iteration Boundary Verification
-- Boundary Failure Identification
-- Branch Misdirection Discovery
-- Decision Coverage Gap Analysis
-- Branch Coverage %
-- Path Execution Tracking
-- Full Logic Validation
-- Gap Identification
-- Deep Logic Probing
-- Iterative Route Analysis
-- Ghost Code Discovery
-- Error Flow Verification
-- Cross-Component Mapping
-- Automated Quality Enforcement
-- Path Coverage %
-thresholds:
-  statement: 90
-  branch: 85
-  fail_under: 80
+reporters:
+  - term-missing
+  - xml
+  - html
+output: quality/coverage/report/

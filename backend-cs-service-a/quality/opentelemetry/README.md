@@ -1,4 +1,4 @@
-# OpenTelemetry Quality Fixture — C# (.NET 8.0)
+# OpenTelemetry Quality Fixture â€” C# (.NET 8.0)
 
 Distributed tracing, metric instrumentation, and span creation verification using .NET 8.0 `System.Diagnostics.ActivitySource` and `System.Diagnostics.Metrics` (OpenTelemetry specification).
 

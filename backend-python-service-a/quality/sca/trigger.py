@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-trigger.py — Native Python trigger runner for Software Composition Analysis (pip-audit).
+trigger.py â€” Native Python trigger runner for Software Composition Analysis (pip-audit).
 """
 import subprocess
 import sys

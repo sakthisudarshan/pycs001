@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-trigger.py — Native Python trigger runner for Mutation Score (mutmut / cosmic-ray).
+trigger.py â€” Native Python trigger runner for Mutation Score (mutmut / cosmic-ray).
 """
 import subprocess
 import sys

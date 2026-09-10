@@ -1,17 +1,17 @@
-tool: Semgrep
+tool: semgrep
 language: csharp
-version: net8.0
+version: "net8.0"
 technique: Static Vulnerabilities (SAST)
-execution_result: pass
-status: pass
+metrics:
+  - Secure Coding Validation
+  - Input Validation Testing
+  - Data Flow Security Analysis
+  - Authentication & Authorization Weakness Detection
+  - Dependency & Library Vulnerability Detection
+  - Compliance & Security Standard Validation
+  - Security Vulnerability Detection
 primary: true
 secondary: roslyn-sast
-run_command: semgrep --config ../.semgrep.yml
-metrics:
-- Secure Coding Validation
-- Input Validation Testing
-- Data Flow Security Analysis
-- Authentication & Authorization Weakness Detection
-- Dependency & Library Vulnerability Detection
-- Compliance & Security Standard Validation
-- Security Vulnerability Detection
+run_command: python quality/semgrep/trigger.py
+config: ../.semgrep.yml
+output: quality/semgrep/report/

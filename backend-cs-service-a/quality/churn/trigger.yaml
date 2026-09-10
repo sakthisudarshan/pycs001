@@ -1,0 +1,14 @@
+tool: pydriller
+language: csharp
+version: "net8.0"
+technique: Code Churn
+metrics:
+  - Code Churn Score
+  - Regression Testing Focus
+  - Defect Prediction
+  - Test Case Maintenance Identification
+  - Change Impact Analysis
+primary: true
+secondary: git-log-churn
+run_command: python quality/churn/trigger.py
+output: quality/churn/report/

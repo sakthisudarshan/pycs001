@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-trigger.py — Native Python trigger runner for Code Duplication (jscpd / copydetect).
+trigger.py â€” Native Python trigger runner for Code Duplication (jscpd / copydetect).
 """
 import shutil
 import subprocess

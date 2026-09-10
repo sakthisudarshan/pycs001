@@ -1,21 +1,19 @@
-tool: OpenTelemetry (.NET) + OTLP/Jaeger/Zipkin exporter
-version: 1.7.0
+tool: opentelemetry
+version: "1.7.0"
 language: csharp
-language_version: net8.0
-technique: Path Coverage
+language_version: "net8.0"
+technique: Distributed Tracing & Observability
 classification: Telemetry Instrumentation
-execution_result: pass
-status: pass
-primary: true
-secondary: csharp call paths
-run_command: dotnet test
 target_files:
-- OpenTelemetryFixture.cs
-- trigger.cs
+  - OpenTelemetryFixture.cs
+  - trigger.cs
+run:
+  command: "python trigger.py"
+run_command: python quality/opentelemetry/trigger.py
 metrics:
-- Path Execution Tracking
-- csharp call paths
-- Trace Instrumentation Coverage
-- Span Creation Validation
-- Activity Source Tracking
-- Telemetry Exporter Health
+  - Trace Instrumentation Coverage
+  - Span Creation Validation
+  - Activity Source Tracking
+  - Telemetry Exporter Health
+primary: true
+output: quality/opentelemetry/report/

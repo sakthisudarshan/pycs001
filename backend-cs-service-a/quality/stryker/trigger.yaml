@@ -1,0 +1,20 @@
+tool: stryker-net
+language: csharp
+version: "net8.0"
+technique: Mutation Score
+metrics:
+  - Mutation Kill Rate %
+  - Fault Detection Capability
+  - Test Coverage Quality Validation
+  - Test Case Improvement Identification
+  - Edge Case Detection
+  - Regression Testing Validation
+  - Code Logic Validation
+primary: true
+secondary: stryker-net
+run_command: python quality/stryker/trigger.py
+config: stryker-config.json
+threshold:
+  kill_rate: 70
+  break_at: 60
+output: quality/stryker/report/

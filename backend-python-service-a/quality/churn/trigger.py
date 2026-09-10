@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-trigger.py — Native Python trigger runner for Code Churn (pydriller).
+trigger.py â€” Native Python trigger runner for Code Churn (pydriller).
 """
 import json
 import os

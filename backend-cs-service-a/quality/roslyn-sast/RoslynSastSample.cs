@@ -1,4 +1,4 @@
-// RoslynSastSample.cs — SAST rule violation fixtures for Roslyn / SecurityCodeScan
+// RoslynSastSample.cs â€” SAST rule violation fixtures for Roslyn / SecurityCodeScan
 using System;
 using System.Data;
 using System.IO;

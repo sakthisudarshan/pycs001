@@ -1,4 +1,4 @@
-// trigger.cs — OpenTelemetry runner verification
+// trigger.cs â€” OpenTelemetry runner verification
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;

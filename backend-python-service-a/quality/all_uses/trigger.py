@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-trigger.py — Native Python trigger runner for All Uses & Definition Coverage (beniget + pyflakes).
+trigger.py â€” Native Python trigger runner for All Uses & Definition Coverage (beniget + pyflakes).
 """
 import ast
 import subprocess

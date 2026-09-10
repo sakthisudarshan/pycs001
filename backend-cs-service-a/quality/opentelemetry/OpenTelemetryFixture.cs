@@ -1,4 +1,4 @@
-// OpenTelemetryFixture.cs — OpenTelemetry distributed tracing and metrics fixture for C# .NET 8.0
+// OpenTelemetryFixture.cs â€” OpenTelemetry distributed tracing and metrics fixture for C# .NET 8.0
 using System;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
