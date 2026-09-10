@@ -18,6 +18,11 @@ def main():
     ]
 
     print("=== [beniget] Definition-Use Chain Analysis ===")
+    subprocess.run(
+        [sys.executable, "-m", "pip", "install", "-q", "-r", "requirements.txt", "beniget", "pytest-cov"],
+        cwd=root_dir,
+        check=False,
+    )
     try:
         from beniget import DefUseChains
         total_defs = 0
@@ -42,15 +47,24 @@ def main():
     subprocess.run([sys.executable, "-m", "pyflakes", "analysis/", "src/"], cwd=root_dir)
 
     print("\n=== [coverage.py] All-Uses Test Execution ===")
+    all_uses_report = root_dir / "quality" / "all_uses" / "report"
+    coverage_report = root_dir / "quality" / "coverage" / "report"
+    all_uses_report.mkdir(parents=True, exist_ok=True)
+    coverage_report.mkdir(parents=True, exist_ok=True)
     cmd = [
         sys.executable, "-m", "pytest", "tests/test_data_flow.py",
         "-o", "cov_fail_under=0",
         "--cov=analysis",
         "--cov-branch",
         "--cov-report=term-missing",
-        "-v"
+        f"--cov-report=xml:{all_uses_report / 'all_uses_coverage.xml'}",
+        f"--cov-report=xml:{coverage_report / 'coverage.xml'}",
+        "-v",
     ]
     subprocess.run(cmd, cwd=root_dir)
+    coverage_xml = coverage_report / "coverage.xml"
+    if coverage_xml.exists():
+        (root_dir / "coverage.xml").write_bytes(coverage_xml.read_bytes())
     sys.exit(0)
 
 if __name__ == "__main__":

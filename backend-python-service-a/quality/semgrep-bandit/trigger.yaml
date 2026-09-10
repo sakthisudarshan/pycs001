@@ -7,7 +7,7 @@ execution_result: pass
 status: pass
 primary: true
 secondary: semgrep
-run_command: python quality/bandit/trigger.py
+run_command: python quality/semgrep-bandit/trigger.py
 metrics:
 - Best Practice Compliance
 - Entry Point Sanitization

@@ -1,4 +1,4 @@
-tool: coverlet
+tool: Coverlet
 language: csharp
 version: "net8.0"
 techniques:

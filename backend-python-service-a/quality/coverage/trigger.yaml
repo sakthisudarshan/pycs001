@@ -1,4 +1,4 @@
-tool: coverage.py
+tool: Coverage.py
 version: "7.4.4"
 language: python
 language_version: "3.11"

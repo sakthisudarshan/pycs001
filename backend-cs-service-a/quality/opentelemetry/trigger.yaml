@@ -1,4 +1,4 @@
-tool: opentelemetry
+tool: OpenTelemetry (.NET) + OTLP/Jaeger/Zipkin exporter
 version: "1.7.0"
 language: csharp
 language_version: "net8.0"

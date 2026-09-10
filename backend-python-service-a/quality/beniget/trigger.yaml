@@ -7,7 +7,7 @@ execution_result: pass
 status: pass
 primary: true
 secondary: pyflakes
-run_command: python quality/all_uses/trigger.py
+run_command: python quality/beniget/trigger.py
 metrics:
 - All-Defs Coverage %
 - Definition-Use Mapping

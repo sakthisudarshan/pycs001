@@ -7,7 +7,7 @@ execution_result: pass
 status: pass
 primary: true
 secondary: mutmut
-run_command: python quality/mutation/trigger.py
+run_command: python quality/cosmic-ray/trigger.py
 metrics:
 - Mutation Kill Rate %
 - Logic Error Sensitivity

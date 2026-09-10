@@ -1,4 +1,4 @@
-tool: roslyn-sast
+tool: roslyn sast
 version: "net8.0"
 language: csharp
 language_version: "net8.0"

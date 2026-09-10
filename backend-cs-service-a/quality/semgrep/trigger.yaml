@@ -1,4 +1,4 @@
-tool: semgrep
+tool: Semgrep
 language: csharp
 version: "net8.0"
 technique: Static Vulnerabilities (SAST)
@@ -11,7 +11,7 @@ metrics:
   - Compliance & Security Standard Validation
   - Security Vulnerability Detection
 primary: true
-secondary: roslyn-sast
+secondary: roslyn sast
 run_command: python quality/semgrep/trigger.py
 config: ../.semgrep.yml
 output: quality/semgrep/report/
