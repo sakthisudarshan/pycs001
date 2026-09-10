@@ -1,2 +1,0 @@
-obj\Debug\net8.0/Record.cs \
-obj\Debug\net8.0/RecordGrpc.cs: ../shared/proto/record.proto

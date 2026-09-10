@@ -5,3 +5,13 @@ dist/
 .env
 .DS_Store
 coverage/
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+venv/
