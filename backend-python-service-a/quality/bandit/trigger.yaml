@@ -1,0 +1,14 @@
+tool: bandit
+language: python
+version: '3.11'
+technique: Static Application Security Testing (SAST)
+execution_result: pass
+status: pass
+primary: true
+secondary: semgrep
+run_command: python quality/bandit/trigger.py
+metrics:
+- Security Issue Density
+- Hardcoded Secret Detection
+- Injection Vulnerability Detection
+- Cryptographic Weakness Detection

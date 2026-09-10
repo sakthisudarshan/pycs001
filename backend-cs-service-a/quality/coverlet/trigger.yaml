@@ -1,0 +1,25 @@
+tool: Coverlet
+language: csharp
+version: net8.0
+technique: Control Flow Testing
+execution_result: pass
+status: pass
+primary: true
+secondary: coverlet
+run_command: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+metrics:
+- Unit Testing Support
+- Dead Code Detection
+- Test Completeness Evaluation
+- Basic Logic Validation
+- Statement Coverage %
+- Boolean Accuracy Check
+- Control Flow Validation
+- Loop Condition Testing
+- Edge Case Detection
+- Logic Error Detection
+- Test Case Completeness
+- Branch Coverage %
+threshold:
+  line: 80
+  branch: 75

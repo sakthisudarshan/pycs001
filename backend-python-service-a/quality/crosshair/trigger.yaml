@@ -1,0 +1,12 @@
+tool: CrossHair
+language: python
+version: '3.11'
+technique: All Definition Coverage
+classification: Edge Case Handling
+execution_result: pass
+status: pass
+primary: true
+secondary: pyflakes
+run_command: python quality/all_uses/trigger.py
+metrics:
+- Null and Boundary Flow Analysis

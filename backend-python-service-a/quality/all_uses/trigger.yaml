@@ -1,0 +1,21 @@
+tool: coverage.py + beniget
+language: python
+version: '3.11'
+technique: All Uses Coverage
+execution_result: pass
+status: pass
+primary: true
+secondary: all_uses
+run_command: python quality/all_uses/trigger.py
+metrics:
+- All-Uses Coverage %
+- Computational Use Detection (C-Use)
+- Predicate Use Detection (P-Use)
+- Definition-Use Pair Identification
+- Comprehensive Data Proofing
+- Data Flow Gap Analysis
+- Ambiguity Resolution
+- Cross-Function Use Detection
+- Unreachable Use Detection
+- Ghost Use Identification
+- Data Integrity Audit

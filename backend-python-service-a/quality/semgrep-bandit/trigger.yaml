@@ -1,0 +1,25 @@
+tool: Semgrep OSS + Bandit
+language: python
+version: '3.11'
+technique: Static Vulnerabilities (SAST)
+classification: Secure Coding Validation
+execution_result: pass
+status: pass
+primary: true
+secondary: semgrep
+run_command: python quality/bandit/trigger.py
+metrics:
+- Best Practice Compliance
+- Entry Point Sanitization
+- Sensitive Information Tracking
+- Access Control Verification
+- Supply Chain Security
+- Regulatory Alignment
+- Exploit Surface Identification
+- Secure Coding Validation
+- Input Validation Testing
+- Data Flow Security Analysis
+- Authentication & Authorization Weakness Detection
+- Dependency & Library Vulnerability Detection
+- Compliance & Security Standard Validation
+- Security Vulnerability Detection

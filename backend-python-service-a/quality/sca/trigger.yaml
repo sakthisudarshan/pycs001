@@ -1,0 +1,15 @@
+tool: pip-audit
+language: python
+version: '3.11'
+technique: Software Composition Analysis (SCA)
+execution_result: pass
+status: pass
+primary: true
+secondary: safety
+run_command: python quality/sca/trigger.py
+metrics:
+- Known Vulnerability Count (CVE)
+- CVSS Severity Distribution
+- Vulnerable Dependency Identification
+threshold:
+  fail_on_vuln: false

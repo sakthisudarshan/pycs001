@@ -1,0 +1,24 @@
+tool: jscpd
+language: python
+version: 4.0.0
+language_version: '3.11'
+technique: Code Duplication Detection
+classification: Code Duplication
+execution_result: pass
+status: pass
+primary: true
+secondary: copydetect
+run_command: python quality/jscpd/trigger.py
+target_files:
+- clone_a.py
+- clone_b.py
+metrics:
+- Defect Propagation Risk Detection
+- Refactoring Identification
+- Structural Cleanliness Score
+- Test Suite Streamlining
+- Abstraction Potential
+- Regression Focus Mapping
+- Maintainability Testing
+expects:
+- duplicate_clone_detected: true

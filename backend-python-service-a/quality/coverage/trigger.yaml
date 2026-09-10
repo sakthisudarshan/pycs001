@@ -1,0 +1,38 @@
+tool: Coverage.py
+version: 7.4.4
+language: python
+language_version: '3.11'
+technique: Control Flow Testing
+classification: Statement and Branch Coverage
+execution_result: pass
+status: pass
+primary: true
+secondary: pytest-cov
+run_command: pytest --cov=src --cov-report=xml --cov-report=term-missing tests/
+metrics:
+- Unit Testing Support
+- Unreachable Logic Identification
+- Coverage Gap Analysis
+- Surface-Level Correctness
+- Statement Coverage %
+- Boolean Accuracy Check
+- Sequence Integrity Mapping
+- Iteration Boundary Verification
+- Boundary Failure Identification
+- Branch Misdirection Discovery
+- Decision Coverage Gap Analysis
+- Branch Coverage %
+- Path Execution Tracking
+- Full Logic Validation
+- Gap Identification
+- Deep Logic Probing
+- Iterative Route Analysis
+- Ghost Code Discovery
+- Error Flow Verification
+- Cross-Component Mapping
+- Automated Quality Enforcement
+- Path Coverage %
+thresholds:
+  statement: 90
+  branch: 85
+  fail_under: 80

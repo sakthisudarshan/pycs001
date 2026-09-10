@@ -1,0 +1,14 @@
+tool: Beniget
+language: python
+version: '3.11'
+technique: All Definition Coverage
+classification: Variable Definition Detection
+execution_result: pass
+status: pass
+primary: true
+secondary: pyflakes
+run_command: python quality/all_uses/trigger.py
+metrics:
+- All-Defs Coverage %
+- Definition-Use Mapping
+- Coverage Measurement

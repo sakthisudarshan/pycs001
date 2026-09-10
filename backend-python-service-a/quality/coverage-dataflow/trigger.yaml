@@ -1,0 +1,14 @@
+tool: coverage.py
+language: python
+version: '3.11'
+technique: All Definition Coverage
+classification: Definition-Use Mapping
+execution_result: pass
+status: pass
+primary: true
+secondary: pyflakes
+run_command: pytest --cov=src tests/
+metrics:
+- All-Defs Coverage %
+- Data Path Correlation
+- DU-Path Validation

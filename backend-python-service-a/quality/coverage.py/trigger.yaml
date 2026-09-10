@@ -1,0 +1,20 @@
+tool: Coverage.py
+version: 7.4.4
+language: python
+language_version: '3.11'
+technique: Code Coverage Auditing
+classification: Statement and Branch Coverage
+execution_result: pass
+status: pass
+primary: true
+secondary: pytest-cov
+run_command: python quality/coverage.py/trigger.py
+metrics:
+- Statement Coverage %
+- Branch Coverage %
+- Path Coverage %
+- Coverage Delta %
+thresholds:
+  statement: 90
+  branch: 85
+  fail_under: 80

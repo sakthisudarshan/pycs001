@@ -1,0 +1,22 @@
+tool: cosmic-ray
+language: python
+version: '3.11'
+technique: Mutation Score
+classification: Fault Detection Capability
+execution_result: pass
+status: pass
+primary: true
+secondary: mutmut
+run_command: python quality/mutation/trigger.py
+metrics:
+- Mutation Kill Rate %
+- Logic Error Sensitivity
+- Test Rigor Assessment
+- Test Suite Effectiveness Evaluation
+- Fault Detection Capability
+- Weak Spot Localization
+- Boundary Mutant Analysis
+- Change Resilience Testing
+- Semantic Integrity Check
+threshold:
+  kill_rate: 85

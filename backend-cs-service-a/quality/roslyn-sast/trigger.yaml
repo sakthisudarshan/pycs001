@@ -1,0 +1,26 @@
+tool: roslyn sast
+version: net8.0
+language: csharp
+language_version: net8.0
+technique: Static Application Security Testing (SAST)
+classification: Roslyn SAST Analyzer
+execution_result: pass
+status: pass
+primary: true
+secondary: SecurityCodeScan
+run_command: dotnet build backend-cs-service-a.csproj /p:EnableNETAnalyzers=true
+target_files:
+- RoslynSastSample.cs
+metrics:
+- Violation Density per KLOC
+- Resource Waste Identification
+- Semantic Consistency Score
+- Syntactic Uniformity Score
+- Structural Threshold Monitoring
+- Impact Prioritization
+- Aggregated Risk Assessment
+- Accuracy Tuning
+- Project-Specific Enforcement
+- Environment Standardization
+- Automated Gatekeeping
+- Quality Audit Trail

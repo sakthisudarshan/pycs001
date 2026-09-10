@@ -1,0 +1,38 @@
+tool: roslyn sast
+version: net8.0
+language: csharp
+language_version: net8.0
+technique: Static Code Analysis
+classification: Lint / Rule Violations
+execution_result: pass
+status: pass
+primary: true
+secondary: roslyn
+run_command: dotnet build backend-cs-service-a.csproj /p:EnableNETAnalyzers=true
+target_files:
+- RoslynSample.cs
+- RoslynSastSample.cs
+metrics:
+- Violation Density per KLOC
+- Resource Waste Identification
+- Semantic Consistency Score
+- Syntactic Uniformity Score
+- Structural Threshold Monitoring
+- Impact Prioritization
+- Aggregated Risk Assessment
+- Accuracy Tuning
+- Project-Specific Enforcement
+- Environment Standardization
+- Automated Gatekeeping
+- Quality Audit Trail
+- Unused Variable Detection
+- Naming Convention Validation
+- Code Style Rule Validation
+- Complexity Rule Detection
+- Rule Severity Classification
+- Multiple Violations Detection
+- False Positive Prevention
+- Custom Rule Validation
+- Configuration File Handling
+- CI/CD Integration Validation
+- Violation Reporting Validation

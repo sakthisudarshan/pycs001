@@ -1,0 +1,21 @@
+tool: OpenTelemetry (.NET) + OTLP/Jaeger/Zipkin exporter
+version: 1.7.0
+language: csharp
+language_version: net8.0
+technique: Path Coverage
+classification: Telemetry Instrumentation
+execution_result: pass
+status: pass
+primary: true
+secondary: csharp call paths
+run_command: dotnet test
+target_files:
+- OpenTelemetryFixture.cs
+- trigger.cs
+metrics:
+- Path Execution Tracking
+- csharp call paths
+- Trace Instrumentation Coverage
+- Span Creation Validation
+- Activity Source Tracking
+- Telemetry Exporter Health
