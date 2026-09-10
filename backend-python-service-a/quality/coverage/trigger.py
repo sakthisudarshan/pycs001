@@ -1,27 +1,19 @@
 #!/usr/bin/env python3
 """
 trigger.py — Native Python trigger runner for Coverage.py + pytest-cov.
-Calculates Statement, Branch, and Path coverage metrics.
+Delegates to run_coverage.sh so dependencies are installed before pytest runs.
 """
 import subprocess
 import sys
 from pathlib import Path
 
+
 def main():
-    root_dir = Path(__file__).resolve().parent.parent.parent
-    cmd = [
-        sys.executable, "-m", "pytest", "tests/",
-        "--cov=src",
-        "--cov=analysis",
-        "--cov-branch",
-        "--cov-report=term-missing",
-        "--cov-report=xml:quality/coverage/report/coverage.xml",
-        "--cov-fail-under=80",
-        "-v"
-    ]
-    print(f"Executing: {' '.join(cmd)}")
-    result = subprocess.run(cmd, cwd=root_dir)
+    script = Path(__file__).resolve().parent / "run_coverage.sh"
+    print(f"Executing: bash {script}")
+    result = subprocess.run(["bash", str(script)], cwd=script.parent)
     sys.exit(result.returncode)
+
 
 if __name__ == "__main__":
     main()
