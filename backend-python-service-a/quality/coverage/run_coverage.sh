@@ -25,4 +25,9 @@ echo "=== [coverage.py] Project test suite coverage (src + analysis) ==="
 cd "$ROOT_DIR"
 "$PY" -m pytest -c "$SCRIPT_DIR/pytest-cov.ini" tests/
 
+# Primary artifact for Testable (trigger.yaml -> quality/coverage/report/)
+if [ -f "$REPORT_DIR/coverage.xml" ]; then
+  cp "$REPORT_DIR/coverage.xml" "$ROOT_DIR/coverage.xml"
+fi
+
 echo "=== [coverage.py] Scan complete ==="

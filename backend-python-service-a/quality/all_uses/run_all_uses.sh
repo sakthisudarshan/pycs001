@@ -5,7 +5,12 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+PY="${PYTHON:-python3}"
 cd "$ROOT_DIR"
+
+echo "=== [all_uses] Installing test dependencies ==="
+"$PY" -m pip install -q -r "$ROOT_DIR/requirements.txt" pytest-cov coverage 2>/dev/null \
+  || "$PY" -m pip install -q -r "$ROOT_DIR/requirements.txt" pytest-cov coverage
 
 echo "=== [beniget] Definition-Use Chain Analysis ==="
 python - <<'PYEOF'
@@ -47,7 +52,7 @@ python -m pyflakes analysis/ src/ || true
 
 echo ""
 echo "=== [coverage.py] All-Uses via branch + data-flow tests ==="
-python -m pytest tests/test_data_flow.py \
+"$PY" -m pytest tests/test_data_flow.py \
   -o cov_fail_under=0 \
   --cov=analysis \
   --cov-branch \
