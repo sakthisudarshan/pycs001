@@ -1,0 +1,15 @@
+tool: coverage.py + beniget
+language: python
+version: "3.11"
+technique: All Uses Coverage
+metrics:
+  - All-Uses Coverage %
+  - Computational Use Detection (C-Use)
+  - Predicate Use Detection (P-Use)
+  - Definition-Use Pair Identification
+  - Cross-Function Use Detection
+  - Unreachable Use Detection
+primary: true
+secondary: all_uses
+run_command: bash quality/all_uses/run_all_uses.sh
+output: quality/all_uses/report/

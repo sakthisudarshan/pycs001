@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <!-- Enforce all Roslyn analyzer warnings as build outputs -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>5</WarningLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <AnalysisMode>Recommended</AnalysisMode>
+    <!-- Coverlet: enable branch coverage collection globally -->
+    <CollectCoverage>true</CollectCoverage>
+    <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+    <CoverletOutput>$(MSBuildProjectDirectory)/quality/coverlet/report/coverage.xml</CoverletOutput>
+    <BranchesThreshold>75</BranchesThreshold>
+    <LineThreshold>80</LineThreshold>
+  </PropertyGroup>
+</Project>

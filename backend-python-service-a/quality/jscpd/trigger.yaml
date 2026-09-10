@@ -1,0 +1,24 @@
+tool: jscpd
+version: "4.0.0"
+language: python
+language_version: "3.11"
+technique: Code Duplication Detection
+classification: Code Duplication
+target_files:
+  - clone_a.py
+  - clone_b.py
+run:
+  command: "bash run_jscpd.sh"
+run_command: bash quality/jscpd/run_jscpd.sh
+thresholds:
+  min_lines: 5
+  min_tokens: 40
+  threshold: 5
+expects:
+  - duplicate_clone_detected: true
+metric: Structural Cleanliness Score
+primary: true
+reporters:
+  - console
+  - json
+output: quality/jscpd/report/

@@ -1,0 +1,14 @@
+tool: mutmut
+language: python
+version: "3.11"
+technique: Mutation Score
+metrics:
+  - Mutation Kill Rate %
+  - Logic Error Sensitivity
+  - Test Rigor Assessment
+primary: true
+secondary: cosmic-ray
+run_command: bash quality/mutation/run_mutmut.sh
+threshold:
+  kill_rate: 70
+output: quality/mutation/report/

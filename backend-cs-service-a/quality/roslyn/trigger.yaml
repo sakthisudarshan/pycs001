@@ -1,0 +1,34 @@
+tool: roslyn sast
+version: "net8.0"
+language: csharp
+language_version: "net8.0"
+technique: Static Application Security Testing (SAST)
+classification: Roslyn SAST Analyzer
+target_files:
+  - RoslynSastSample.cs
+run:
+  command: "bash run_roslyn.sh"
+run_command: bash quality/roslyn/run_roslyn.sh
+rules:
+  - SCS0001
+  - SCS0002
+  - SCS0006
+  - SCS0015
+  - SCS0018
+metrics:
+  - Violation Density per KLOC
+  - Unused Variable Detection
+  - Naming Convention Validation
+  - Code Style Rule Validation
+  - Complexity Rule Detection
+  - Rule Severity Classification
+  - Multiple Violations Detection
+  - False Positive Prevention
+  - Custom Rule Validation
+  - Configuration File Handling
+  - CI/CD Integration Validation
+  - Violation Reporting Validation
+primary: true
+secondary: SecurityCodeScan
+config: ../.editorconfig
+output: quality/roslyn/report/

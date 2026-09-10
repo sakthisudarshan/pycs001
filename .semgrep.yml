@@ -1,0 +1,77 @@
+rules:
+  # ── SQL Injection ─────────────────────────────────────────────────────────
+  - id: csharp-sql-injection-string-concat
+    patterns:
+      - pattern: |
+          string $QUERY = "SELECT" + $INPUT;
+      - pattern: |
+          string $QUERY = "SELECT * FROM" + $INPUT;
+      - pattern: |
+          string $QUERY = "... WHERE Username = '" + $INPUT + "'";
+    message: >
+      SQL Injection: user input '$INPUT' is concatenated directly into SQL query '$QUERY'.
+      Use parameterized queries (SqlCommand.Parameters) instead.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-89
+      owasp: A03:2021
+
+  # ── OS Command Injection ──────────────────────────────────────────────────
+  - id: csharp-command-injection-process-start
+    patterns:
+      - pattern: Process.Start($CMD, "/c " + $INPUT)
+      - pattern: Process.Start($CMD, $INPUT)
+    message: >
+      Command Injection: '$INPUT' is passed unsanitized to Process.Start.
+      Validate and sanitize all external input before invoking shell commands.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-78
+      owasp: A03:2021
+
+  # ── Hardcoded Credentials ─────────────────────────────────────────────────
+  - id: csharp-hardcoded-api-key
+    patterns:
+      - pattern: |
+          const string $VAR = "AKIA...";
+      - pattern: |
+          string $VAR = "AKIAIOSFODNN7EXAMPLE";
+    message: >
+      Hardcoded AWS Access Key ID found in '$VAR'. Store secrets in environment
+      variables or a secrets manager.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-798
+      owasp: A07:2021
+
+  - id: csharp-hardcoded-password
+    pattern: |
+      const string $VAR = "SuperSecretPassword...";
+    message: >
+      Hardcoded password found in constant '$VAR'. Use a secrets manager.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-259
+
+  # ── Weak Cryptography ─────────────────────────────────────────────────────
+  - id: csharp-weak-hash-md5
+    patterns:
+      - pattern: MD5.Create()
+      - pattern: new MD5CryptoServiceProvider()
+    message: >
+      Weak hashing algorithm MD5 detected. Use SHA-256 or stronger for
+      security-sensitive operations.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-327
+      owasp: A02:2021

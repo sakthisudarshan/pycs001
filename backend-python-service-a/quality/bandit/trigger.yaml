@@ -1,0 +1,19 @@
+tool: bandit
+language: python
+version: "3.11"
+technique: Static Application Security Testing (SAST)
+metrics:
+  - Security Issue Density
+  - Hardcoded Secret Detection
+  - Injection Vulnerability Detection
+  - Cryptographic Weakness Detection
+primary: true
+run_command: bash quality/bandit/run_bandit.sh
+threshold:
+  severity: low
+  confidence: low
+reporters:
+  - screen
+  - json
+  - html
+output: quality/bandit/report/

@@ -1,0 +1,13 @@
+tool: Beniget
+language: python
+version: "3.11"
+technique: All Definition Coverage
+classification: Variable Definition Detection
+metrics:
+  - All-Defs Coverage %
+  - Definition-Use Mapping
+  - Coverage Measurement
+primary: true
+secondary: pyflakes
+run_command: bash quality/beniget/run_beniget.sh
+output: quality/beniget/report/

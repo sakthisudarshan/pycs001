@@ -1,0 +1,13 @@
+tool: coverage.py
+language: python
+version: "3.11"
+technique: All Definition Coverage
+classification: Definition-Use Mapping
+metrics:
+  - All-Defs Coverage %
+  - Data Path Correlation
+  - DU-Path Validation
+primary: true
+secondary: pyflakes
+run_command: bash quality/coverage-dataflow/run_coverage_dataflow.sh
+output: quality/coverage-dataflow/report/

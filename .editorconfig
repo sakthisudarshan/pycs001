@@ -1,0 +1,53 @@
+root = true
+
+[*.cs]
+# Core formatting
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Naming conventions
+dotnet_naming_rule.private_fields_should_be_camel_case.symbols = private_fields
+dotnet_naming_rule.private_fields_should_be_camel_case.style = camel_case_style
+dotnet_naming_rule.private_fields_should_be_camel_case.severity = warning
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Unused variable detection — mirrors pyflakes for C#
+dotnet_diagnostic.CS0168.severity = warning   # declared but never used
+dotnet_diagnostic.CS0169.severity = warning   # private field never used
+dotnet_diagnostic.CS0219.severity = warning   # variable assigned but never used
+dotnet_diagnostic.IDE0059.severity = warning  # unnecessary assignment
+
+# Complexity rules — structural threshold monitoring
+dotnet_diagnostic.CA1502.severity = warning   # avoid excessive complexity
+
+# Style rules — syntactic uniformity
+dotnet_diagnostic.IDE0003.severity = warning  # remove 'this' qualification
+dotnet_diagnostic.IDE0007.severity = warning  # use var when type is apparent
+dotnet_diagnostic.IDE0011.severity = warning  # add braces
+dotnet_diagnostic.IDE0055.severity = warning  # fix formatting
+
+# Code quality — resource waste identification
+dotnet_diagnostic.CA2000.severity = warning   # dispose objects before losing scope
+dotnet_diagnostic.CA1806.severity = warning   # do not ignore method results
+
+# Security / SAST — severity classification
+dotnet_diagnostic.SCS0002.severity = error    # SQL injection (SecurityCodeScan)
+dotnet_diagnostic.SCS0007.severity = error    # XSS
+dotnet_diagnostic.SCS0012.severity = warning  # controller method authorization check
+dotnet_diagnostic.SCS0026.severity = error    # command injection
+dotnet_diagnostic.SCS0015.severity = warning  # hardcoded password
+
+# Custom rule: CI/CD gatekeeping
+dotnet_diagnostic.CS8600.severity = warning   # converting null literal
+dotnet_diagnostic.CS8602.severity = warning   # dereference of possibly null
+
+[*.{json,yml,yaml}]
+indent_size = 2

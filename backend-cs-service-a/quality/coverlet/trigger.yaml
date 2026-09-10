@@ -1,0 +1,18 @@
+tool: Coverlet
+language: csharp
+version: "net8.0"
+techniques:
+  - Statement Coverage
+  - Branch Coverage
+  - Coverage Delta
+metrics:
+  - Statement Coverage %
+  - Branch Coverage %
+  - Coverage Delta %
+primary: true
+secondary: coverlet-delta
+run_command: bash quality/coverlet/run_coverlet.sh
+threshold:
+  line: 80
+  branch: 75
+output: quality/coverlet/report/

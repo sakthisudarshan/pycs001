@@ -1,0 +1,11 @@
+tool: CrossHair
+language: python
+version: "3.11"
+technique: All Definition Coverage
+classification: Edge Case Handling
+metrics:
+  - Null and Boundary Flow Analysis
+primary: true
+secondary: pyflakes
+run_command: bash quality/crosshair/run_crosshair.sh
+output: quality/crosshair/report/

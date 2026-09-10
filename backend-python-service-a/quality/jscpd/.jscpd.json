@@ -1,0 +1,9 @@
+{
+  "threshold": 5,
+  "reporters": ["console", "json"],
+  "output": "./report",
+  "minLines": 5,
+  "maxLines": 1000,
+  "minTokens": 40,
+  "format": ["python"]
+}

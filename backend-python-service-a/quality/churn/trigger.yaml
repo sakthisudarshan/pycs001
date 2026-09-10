@@ -1,0 +1,14 @@
+tool: pydriller
+language: python
+version: "3.11"
+technique: Code Churn Analysis
+metrics:
+  - Total Added Lines
+  - Total Deleted Lines
+  - File Churn Frequency
+  - Hotspot Identification
+primary: true
+run_command: bash quality/churn/run_churn.sh
+threshold:
+  min_commits: 1
+output: quality/churn/report/
