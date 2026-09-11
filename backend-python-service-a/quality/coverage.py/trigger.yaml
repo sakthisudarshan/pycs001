@@ -8,8 +8,8 @@ target_files:
   - sample_covered.py
   - test_sample_covered.py
 run:
-  command: "bash run_coverage.sh"
-run_command: bash quality/coverage/run_coverage.sh
+  command: "python trigger.py"
+run_command: python quality/coverage.py/trigger.py
 thresholds:
   statement: 80
   branch: 75
@@ -25,4 +25,4 @@ reporters:
   - term-missing
   - xml
   - html
-output: quality/coverage/report/
+output: quality/coverage.py/report/

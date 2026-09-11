@@ -1,0 +1,24 @@
+tool: Cosmic Ray
+version: "8.3.7"
+language: python
+language_version: "3.11"
+technique: Mutation Score
+classification: Mutation Testing
+target_files:
+  - complexity_sample.py
+  - test_complexity.py
+run:
+  command: "bash run_cosmic_ray.sh"
+run_command: bash quality/cosmic_ray/run_cosmic_ray.sh
+thresholds:
+  kill_rate: 70
+metrics:
+  - Mutation Kill Rate %
+  - Logic Error Sensitivity
+  - Test Rigor Assessment
+primary: true
+secondary: mutmut
+reporters:
+  - console
+  - json
+output: quality/cosmic_ray/report/

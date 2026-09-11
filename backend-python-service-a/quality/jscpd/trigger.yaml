@@ -8,8 +8,8 @@ target_files:
   - clone_a.py
   - clone_b.py
 run:
-  command: "bash run_jscpd.sh"
-run_command: bash quality/jscpd/run_jscpd.sh
+  command: "python trigger.py"
+run_command: python quality/jscpd/trigger.py
 thresholds:
   min_lines: 5
   min_tokens: 40
